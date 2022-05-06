@@ -38,9 +38,7 @@ def count_students(file):
     print(responses)
     students = responses.count("y")
     staff = responses.count("n")
-    for i in responses:
-      if i == "student":
-        del(i)
+    responses = responses.remove("student")
     print(responses)
     unknown = len(responses)
     
