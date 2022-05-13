@@ -26,7 +26,6 @@ def count_plates(file):
   print()
   for plate in unique_plates:
     print(plate + ": " + str(plates.count(plate)))
-  data.close()
 
 def count_students(file):
   with open(file, "r", newline="") as data:
@@ -35,15 +34,28 @@ def count_students(file):
     # Put all responses into a list to be counted
     for row in reader_object:
       responses.append(row[2])
-    print(responses)
     students = responses.count("y")
     staff = responses.count("n")
-    responses = responses.remove("student")
-    print(responses)
-    unknown = len(responses)
+    nopass = responses.count("")
     
     print()
-    print("Students: " + str(students))
-    print("Staff: " + str(staff))
-    print("Unknown: " + str(unknown))
-  data.close()
+    print("Students: " + str(students), "Staff: " + str(staff), "No Pass: " + str(nopass), sep="\n")
+
+def count_ampm(file):
+  with open(file, "r", newline="") as data:
+    reader_object = reader(data)
+    responses = []
+    am = 0
+    pm = 0
+    allday = 0
+    for row in reader_object:
+      responses.append((row[3],row[4]))
+    for i in responses:
+      if i[0] == "y" and i[1] == "y":
+        allday += 1
+      elif i[0] == "y" and i[1] == "n":
+        am += 1
+      elif i[0] == "n" and i[1] == "y":
+        pm += 1
+    print()
+    print("All Day: " + str(allday), "AM only: " + str(am), "PM only:" + str(pm), sep="\n")

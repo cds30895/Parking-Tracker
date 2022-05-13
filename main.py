@@ -7,13 +7,12 @@ from csv import writer
 from datetime import datetime
 import reader
 
- # Use writer() object from csv library to write 
+# Use writer() object from csv library to write 
 # the data to a new row in the data sheet
 def write_new_row(file, new_data):
   with open(file, "a", newline="") as data:
     writer_object = writer(data)
     writer_object.writerow(new_data)
-    data.close()
 
 if __name__ == "__main__":
 
@@ -25,6 +24,8 @@ if __name__ == "__main__":
 
   if user_choice == 2:
     reader.count_plates(file)
+    reader.count_students(file)
+    reader.count_ampm(file)
 
   elif user_choice == 1:
     
@@ -42,4 +43,5 @@ if __name__ == "__main__":
   
     # Print a count of unique plates
     reader.count_plates(file)
-    # reader.count_students(file)
+    reader.count_students(file)
+    reader.count_ampm(file)
