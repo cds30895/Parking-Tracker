@@ -23,7 +23,7 @@ def count_plates(file):
       unique_plates.append(plate)
   # For each unique plate, count and print 
   # the occurrences in the data sheet
-  print()
+  print("\nUnique Plates:\n")
   for plate in unique_plates:
     print(plate + ": " + str(plates.count(plate)))
 
