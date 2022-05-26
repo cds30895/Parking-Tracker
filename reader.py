@@ -8,24 +8,22 @@ parking violations.
 """
 
 from csv import reader
+from pprint import pp
 
 def count_plates(file):
-  with open(file,"r", newline="") as data:
-    reader_object = reader(data)
-    plates = []
-    unique_plates = []
-    # List all plate names from data sheet
-    for row in reader_object:
-      plates.append(row[1])
-  # List all unique plates
-  for plate in plates:
-    if plate not in unique_plates and plate != "license plate" and plate != "":
-      unique_plates.append(plate)
-  # For each unique plate, count and print 
-  # the occurrences in the data sheet
-  print("\nUnique Plates:\n")
-  for plate in unique_plates:
-    print(plate + ": " + str(plates.count(plate)))
+  with open(file, "r") as f:
+    data = reader(f)
+    unique_plates = {}
+    # For all the plates in the data sheet, if they
+    # are not in the dictionary, add them with a
+    # value of 1.  If they are in the dictionary,
+    # increment the value by 1.
+    for row in data:
+      if row[1] not in unique_plates and row[1] != "license plate" and row[1] != "":
+        unique_plates[row[1]] = 1
+      elif row[1] in unique_plates:
+        unique_plates[row[1]] += 1
+  pp(unique_plates)
 
 def count_students(file):
   with open(file, "r", newline="") as data:
