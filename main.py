@@ -16,7 +16,7 @@ def write_new_row(file, new_data):
 
 if __name__ == "__main__":
 
-  file = "parking_data.csv"
+  file = "parking_data_22-23.csv"
   date = datetime.today().strftime("%m/%d/%Y")
 
   # Input or view data?
