@@ -57,3 +57,17 @@ def count_ampm(file):
         pm += 1
     print()
     print("All Day: " + str(allday), "AM only: " + str(am), "PM only:" + str(pm), sep="\n")
+
+# Count the number of unique dates in
+# which someone has parked in my spot
+def unique_dates(file):
+  with open(file, "r", newline="") as data:
+    reader_object = reader(data)
+    responses = []
+    
+    # For each entry, add the date if not already recorded
+    for row in reader_object:
+      if row[0] not in responses and row[0] != "date":
+        responses.append(row[0])
+    print()
+    print("Unique dates: " + str(len(responses)))

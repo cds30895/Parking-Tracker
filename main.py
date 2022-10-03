@@ -14,7 +14,7 @@ def write_new_row(file, new_data):
     writer_object = writer(data)
     writer_object.writerow(new_data)
 
-if __name__ == "__main__":
+while __name__ == "__main__":
 
   file = "parking_data_22-23.csv"
   date = datetime.today().strftime("%m/%d/%Y")
@@ -22,12 +22,14 @@ if __name__ == "__main__":
   # Input or view data?
   user_choice = int(input("Would you like to:\n 1. Input new data\n 2. View existing data\n"))
 
-  if user_choice == 2:
-    reader.count_plates(file)
-    reader.count_students(file)
-    reader.count_ampm(file)
+  # if user_choice == 2:
+  #   print()
+    # reader.count_plates(file)
+    # reader.count_students(file)
+    # reader.count_ampm(file)
+    # reader.unique_dates(file)
 
-  elif user_choice == 1:
+  if user_choice == 1:
     
     # Gather input data
     license_plate = input("Input plate number: ").upper()
@@ -40,8 +42,15 @@ if __name__ == "__main__":
   
     # Write data to csv
     write_new_row(file, new_data)
-  
-    # Print a count of unique plates
-    reader.count_plates(file)
-    reader.count_students(file)
-    reader.count_ampm(file)
+
+  #Catch errors and loop back to selection
+  elif user_choice != 1 and user_choice != 2:
+    print("\n...Please enter valid choice...\n")
+    continue
+
+  # Print various stats about data
+  reader.count_plates(file)
+  reader.count_students(file)
+  reader.count_ampm(file)
+  reader.unique_dates(file)
+  break
