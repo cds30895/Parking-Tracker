@@ -27,7 +27,7 @@ date,license plate,student,am,pm
 10/05/2022,C03312P,,y,n
 10/05/2022,CCR6684,,n,y
 10/06/2022,C03312P,,y,n
-10/06/2022,CDF9652,,n,y
+10/06/2022,CDF9652,n,n,y
 10/07/2022,CED7721,,y,y
 10/10/2022,BJR4586,,y,n
 10/10/2022,736G,,n,y
@@ -55,7 +55,7 @@ date,license plate,student,am,pm
 11/15/2022,CCR6684,,n,y
 11/22/2022,BNB9799,,y,y
 11/28/2022,C03312P,,y,n
-11/28/2022,CDF9652,y,n,y
+11/28/2022,CDF9652,n,n,y
 11/29/2022,CCC2513,,n,y
 11/30/2022,BCR5831,,n,y
 12/01/2022,BBF9625,,y,y
@@ -112,3 +112,5 @@ date,license plate,student,am,pm
 02/27/2023,CAV8441,y,y,y
 03/01/2023,BHL6377 ARIZONA,,y,n
 03/01/2023,CFK8678,y,n,y
+03/02/2023,BHL6377 ARIZONA,,y,n
+03/02/2023,CDF9652,n,n,y
